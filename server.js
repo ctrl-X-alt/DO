@@ -102,7 +102,7 @@ app.post('/api/plan', async (req,res)=>{
         'Content-Type':'application/json',
         // 'HTTP-Referer':process.env.APP_URL || `http://localhost:${port}`,  # use it for local development
 
-        'HTTP-Referer':process.env.APP_URL || `http://localhost:${port}`,  // this is for production
+        'HTTP-Referer':process.env.APP_URL || 'https://do-rho-five.vercel.app/',  // this is for production
 
         'X-Title':'DO. AI Decision Engine'
       },
@@ -127,4 +127,4 @@ app.post('/api/plan', async (req,res)=>{
 
 // app.listen(port, ()=>console.log(`DO running at http://localhost:${port}`)); # use it for local development
 
-app.listen(port, ()=>console.log(`DO running at http://localhost:${port}`)); // this is for production
+app.listen(port, ()=>console.log(`DO running at ${process.env.APP_URL}`)); // this is for production
